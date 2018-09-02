@@ -45,11 +45,11 @@ def get_connect_details():
         sys.exit(1)
 
 
-# hacky global variable,
-# please do not mind.
-_cli_count_register = 1
+# hacky global variable, please do not mind.
+_cli_count_register = int(time.time()*10)
 def cli(url, method, *params):
     jid = str(_cli_count_register)
+    _cli_count_register += 1
 
     payload = {
         'id': jid,
